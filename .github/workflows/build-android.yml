@@ -1,0 +1,50 @@
+name: Build EDITFLOW OS for Android
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout EDITFLOW OS
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK packages
+        run: |
+          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,armv7-linux-androideabi,i686-linux-android,x86_64-linux-android
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Initialize Android project
+        run: npx tauri android init
+
+      - name: Build Android APK
+        run: npx tauri android build --debug
+
+      - name: Upload Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: EDITFLOW-OS-Android-APK
+          path: src-tauri/gen/android/app/build/outputs/apk/**/*.apk

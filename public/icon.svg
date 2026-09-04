@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect width="512" height="512" rx="128" fill="#090d16" />
+  <rect x="8" y="8" width="496" height="496" rx="120" fill="none" stroke="#1e293b" stroke-width="6" />
+
+  <!-- Dynamic Play / Cut Chevron Wings -->
+  <path d="M150 140 L280 256 L150 372 Z" fill="url(#flowGrad)" />
+  <path d="M260 140 L390 256 L260 372 Z" fill="url(#neonGlow)" opacity="0.9" />
+
+  <!-- Timeline playhead razor marker -->
+  <line x1="270" y1="110" x2="270" y2="402" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+  <polygon points="270,125 255,100 285,100" fill="#ffffff" />
+  <polygon points="270,387 255,412 285,412" fill="#ffffff" />
+</svg>

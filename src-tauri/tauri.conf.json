@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "EDITFLOW OS",
+  "version": "1.0.0",
+  "identifier": "com.editflow.os",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:3000",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "title": "EDITFLOW OS - Client Management for Video Editors",
+        "width": 1340,
+        "height": 880,
+        "minWidth": 980,
+        "minHeight": 640,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "decorations": true,
+        "transparent": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "Productivity",
+    "shortDescription": "Client Management OS for Freelance Video Editors",
+    "longDescription": "The Client Management OS Built for Freelance Video Editors. Manage inquiries, qualification, proposals, projects, briefs, revisions, delivery, and retainers in a local-first standalone desktop environment.",
+    "copyright": "© 2026 EDITFLOW OS. All rights reserved.",
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser"
+      }
+    }
+  }
+}

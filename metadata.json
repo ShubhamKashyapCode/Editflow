@@ -1,0 +1,6 @@
+{
+  "name": "EDITFLOW OS",
+  "description": "The Client Management OS Built for Freelance Video Editors. Manage inquiries, qualification, proposals, projects, briefs, revisions, delivery, and retainers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

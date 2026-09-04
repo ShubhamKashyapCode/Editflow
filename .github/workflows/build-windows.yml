@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Generate Tauri icons
+        run: npx tauri icon src-tauri/icons/128x128.png
+
       - name: Build EDITFLOW OS
         run: npm run tauri:build
 
